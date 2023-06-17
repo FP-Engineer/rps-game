@@ -39,6 +39,8 @@ export const {{ component_name }}: React.FC<Props> = ({ children }) => {
 
 	return <div className={ container }>{ children }</div>;
 };
+
+export default {{ component_name }};
 ```
 
 # `{{ folder_name }}/README.mdx`
