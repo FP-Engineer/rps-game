@@ -18,13 +18,26 @@ questions:
 export * from './{{ component_name }}';
 ```
 
+# `{{ folder_name }}/{{ component_name }}.css.ts`
+
+```typescript
+import { style } from '@vanilla-extract/css';
+
+export const container = style({
+	display: 'inline-block',
+});
+```
+
 # `{{ folder_name }}/{{ component_name }}.tsx`
 
 ```typescript
+import { container } from './{{ component_name }}.css';
+
 export type Props = React.PropsWithChildren<{}>;
 
 export const {{ component_name }}: React.FC<Props> = ({ children }) => {
-	return <>{ children }</>;
+
+	return <div className={ container }>{ children }</div>;
 };
 ```
 
@@ -281,7 +294,9 @@ import { render } from '@testing-library/react';
 import { {{ component_name }} } from './{{ component_name }}';
 
 describe('{{ component_name }} Test Suite', () => {
+
 	it('renders without crashing.', () => {
+
 		render(<{{ component_name }} />);
 	});
 });
