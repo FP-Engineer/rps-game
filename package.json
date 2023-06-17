@@ -1,13 +1,14 @@
 {
   "name": "rps-game",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -23,6 +24,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "typescript": "^5.0.2",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "semantic-release": "^21.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FP-Engineer/rps-game.git"
   }
 }
