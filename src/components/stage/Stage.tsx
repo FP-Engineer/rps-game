@@ -1,6 +1,6 @@
 import { container } from './Stage.css';
 
-export type Props = React.PropsWithChildren<{}>;
+export type Props = React.PropsWithChildren<object>;
 
 export const Stage: React.FC<Props> = ({ children }) => {
 
