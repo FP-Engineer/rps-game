@@ -11,7 +11,10 @@ module.exports = {
 	],
 	collectCoverageFrom: [
 		'<rootDir>/src/**/*.{js,ts,tsx,jsx}',
-		'!<rootDir>/src/**/*.stories.*'
+		'!<rootDir>/src/**/*.d.ts',
+		'!<rootDir>/src/components/**/*.css.ts',
+		'!<rootDir>/src/components/**/*.stories.*',
+		'!<rootDir>/**/index.ts',
 	],
 	coverageThreshold: {
 		global: {
