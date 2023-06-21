@@ -1,8 +1,10 @@
+import { Stage } from "./components/stage";
+
 export type Props = React.PropsWithChildren;
 
-export const App: React.FC<Props> = ({ children }) => {
+export const App: React.FC<Props> = () => {
 
-	return <>{ children }</>;
+	return <Stage />;
 };
 
 export default App;
