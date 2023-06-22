@@ -11,6 +11,7 @@
 		"test": "jest --maxWorkers=2",
 		"test:coverage": "jest --coverage --colors --maxWorkers=2 --passWithNoTests",
 		"preview": "vite preview",
+		"release": "semantic-release",
 		"predeploy": "yarn build",
 		"deploy": "gh-pages -d dist",
 		"prepare": "husky install",
