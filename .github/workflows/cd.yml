@@ -40,6 +40,11 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
+      - name: Release application
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn release
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
