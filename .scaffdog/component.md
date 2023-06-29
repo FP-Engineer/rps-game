@@ -1,7 +1,7 @@
 ---
 name: 'component'
-root: 'src/components'
-output: '.'
+root: './src/'
+output: './**/'
 questions:
   name: 'Please enter a component name:'
 ---
@@ -33,7 +33,7 @@ export const container = style({
 ```typescript
 import { container } from './{{ component_name }}.css';
 
-export type Props = React.PropsWithChildren<{}>;
+export interface Props {};
 
 export const {{ component_name }}: React.FC<Props> = ({ children }) => {
 
