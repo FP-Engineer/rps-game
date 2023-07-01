@@ -1,3 +1,4 @@
+import 'normalize.css';
 import { Stage } from "./components/stage";
 
 export type Props = React.PropsWithChildren;
