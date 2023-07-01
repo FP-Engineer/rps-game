@@ -24,6 +24,9 @@ module.exports = {
 			statements: 90,
 		},
 	},
+	moduleNameMapper: {
+		'\\.(css|less|scss|sass)$': 'identity-obj-proxy'
+	},
 	testEnvironment: 'jsdom',
 	transform: {
 		'\\.css\\.ts$': '@vanilla-extract/jest-transform',
