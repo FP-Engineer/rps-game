@@ -1,6 +1,6 @@
 import { render, getAllByRole } from '@testing-library/react';
 import { Game } from './Game';
-import { rules } from '../../constants';
+import { rules } from '../../constants/rules';
 
 describe('Game Test Suite', () => {
 
