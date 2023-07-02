@@ -1,7 +1,7 @@
 import 'normalize.css';
 import { Stage } from '../components/stage';
 import Game from '../features/game/components/game/Game';
-import { rules } from '../features/game/constants';
+import { rules } from '../features/game/constants/rules';
 
 export type Props = React.PropsWithChildren;
 

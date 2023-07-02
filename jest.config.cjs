@@ -13,7 +13,7 @@ module.exports = {
 		'<rootDir>/src/**/*.{js,ts,tsx,jsx}',
 		'!<rootDir>/src/**/*.d.ts',
 		'!<rootDir>/src/components/**/*.css.ts',
-		'!<rootDir>/src/components/**/*.stories.*',
+		'!<rootDir>/src/**/*.stories.*',
 		'!<rootDir>/**/index.ts',
 	],
 	coverageThreshold: {
