@@ -1,7 +1,7 @@
 module.exports = {
 	preset: 'ts-jest/presets/js-with-ts',
 	testMatch: [
-		'<rootDir>/src/**/*.spec.tsx',
+		'<rootDir>/src/**/*.spec.{ts,tsx}',
 	],
 	coveragePathIgnorePatterns: [
 		'/node_modules/',
