@@ -12,7 +12,7 @@ module.exports = {
 	collectCoverageFrom: [
 		'<rootDir>/src/**/*.{js,ts,tsx,jsx}',
 		'!<rootDir>/src/**/*.d.ts',
-		'!<rootDir>/src/components/**/*.css.ts',
+		'!<rootDir>/src/**/*.css.ts',
 		'!<rootDir>/src/**/*.stories.*',
 		'!<rootDir>/**/index.ts',
 	],
