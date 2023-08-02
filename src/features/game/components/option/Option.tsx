@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { container } from './Option.css';
-
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
+ 
 export interface Props {
 	label: string;
 	handleClick: () => void;
