@@ -1,11 +1,11 @@
 import { render } from '@testing-library/react';
-import { Paper } from './Paper';
+import { Rock } from './Rock';
 
-describe('Paper Test Suite', () => {
+describe('Rock Test Suite', () => {
 
 	it('renders without crashing.', () => {
 
 		// eslint-disable-next-line @typescript-eslint/no-empty-function
-		render(<Paper handleClick={ () => {} } />);
+		render(<Rock handleClick={ () =>  {} }/>);
 	});
 });
