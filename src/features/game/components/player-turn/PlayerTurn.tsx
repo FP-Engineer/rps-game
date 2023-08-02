@@ -1,8 +1,9 @@
 import React from 'react';
 import { Choice } from '../../types';
 import { container } from './PlayerTurn.css';
-import { Scissors } from '../scissors';
 import { Option } from '../option';
+import { Scissors } from '../scissors';
+import { Paper } from '../paper';
 
 export interface Props {
 	options: Array<Choice>;
@@ -10,7 +11,8 @@ export interface Props {
 }
 
 const optionsMap = new Map([
-	[Choice.scissors, Scissors]
+	[Choice.scissors, Scissors],
+	[Choice.paper, Paper]
 ]);
 
 export const PlayerTurn: React.FC<Props> = ({ options, choose }) => {
