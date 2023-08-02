@@ -1,6 +1,6 @@
 import React from 'react';
 import { Choice } from '../../types';
-import { container, item } from './PlayerTurn.css';
+import { container } from './PlayerTurn.css';
 import { Option } from '../option';
 import { Scissors } from '../scissors';
 import { Paper } from '../paper';
