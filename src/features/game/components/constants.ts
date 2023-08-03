@@ -1,8 +1,10 @@
-import React from 'react';
 import { Choice } from '../types';
+import { Rock } from './rock';
+import { Paper } from './paper';
+import { Scissors } from './scissors';
 
 export const optionsMap = new Map([
-	[Choice.rock, React.lazy(() => import('./rock/Rock'))],
-	[Choice.paper, React.lazy(() => import('./paper/Paper'))],
-	[Choice.scissors, React.lazy(() => import('./scissors/Scissors'))],
+	[Choice.rock, Rock],
+	[Choice.paper, Paper],
+	[Choice.scissors, Scissors],
 ]);
