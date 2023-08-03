@@ -33,7 +33,7 @@ export const container = style({
 ```typescript
 import { container } from './{{ component_name }}.css';
 
-export interface Props {};
+export interface Props {}
 
 export const {{ component_name }}: React.FC<Props> = ({ children }) => {
 
