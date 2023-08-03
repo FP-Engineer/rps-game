@@ -20,4 +20,37 @@ describe('PlayerTurn Test Suite', () => {
 
 		expect(callback).toHaveBeenLastCalledWith(Choice.paper);
 	});
+
+	it('should call choose function with Choice.rock when rock option is clicked', async () => {
+		const options = Object.values(Choice);
+		const callback = jest.fn();
+		const { getByLabelText } = render(<PlayerTurn options={options} choose={callback} />);
+		const option = getByLabelText('choose rock');
+
+		await userEvent.click(option);
+
+		expect(callback).toHaveBeenLastCalledWith(Choice.rock);
+	});
+
+	it('should call choose function with Choice.paper when paper option is clicked', async () => {
+		const options = Object.values(Choice);
+		const callback = jest.fn();
+		const { getByLabelText } = render(<PlayerTurn options={options} choose={callback} />);
+		const option = getByLabelText('choose paper');
+
+		await userEvent.click(option);
+
+		expect(callback).toHaveBeenLastCalledWith(Choice.paper);
+	});
+
+	it('should call choose function with Choice.scissors when scissors option is clicked', async () => {
+		const options = Object.values(Choice);
+		const callback = jest.fn();
+		const { getByLabelText } = render(<PlayerTurn options={options} choose={callback} />);
+		const option = getByLabelText('choose scissors');
+
+		await userEvent.click(option);
+
+		expect(callback).toHaveBeenLastCalledWith(Choice.scissors);
+	});
 });
