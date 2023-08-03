@@ -24,8 +24,8 @@ export const PlayerTurn: React.FC<Props> = ({ options, choose }) => {
 			const Component = optionsMap.get(choice);
 
 			return Component
-				? <Component handleClick={choose} />
-				: <Option label={''} handleClick={() => choose(choice)}  />
+				? <Component key={choice} handleClick={choose} />
+				: <Option key={choice} label={''} handleClick={() => choose(choice)}  />
 		})}
 	</div>;
 };
