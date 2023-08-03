@@ -5,7 +5,6 @@ describe('Paper Test Suite', () => {
 
 	it('renders without crashing.', () => {
 
-		// eslint-disable-next-line @typescript-eslint/no-empty-function
-		render(<Paper handleClick={ () => {} } />);
+		render(<Paper handleClick={ () => undefined } />);
 	});
 });
