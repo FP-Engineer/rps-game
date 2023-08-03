@@ -53,4 +53,14 @@ describe('PlayerTurn Test Suite', () => {
 
 		expect(callback).toHaveBeenLastCalledWith(Choice.scissors);
 	});
+
+	it('should provide a fallback option', async () => {
+		const callback = jest.fn();
+		const { getByRole } = render(<PlayerTurn options={[Choice.initial]} choose={callback} />);
+		const option = getByRole('button');
+
+		await userEvent.click(option);
+
+		expect(callback).toHaveBeenLastCalledWith(Choice.initial);
+	});
 });
