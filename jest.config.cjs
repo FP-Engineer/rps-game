@@ -1,5 +1,5 @@
 module.exports = {
-	preset: 'ts-jest/presets/js-with-ts',
+	preset: 'ts-jest',
 	testMatch: [
 		'<rootDir>/src/**/*.spec.{ts,tsx}',
 	],
@@ -31,5 +31,6 @@ module.exports = {
 	testEnvironment: 'jsdom',
 	transform: {
 		'\\.css\\.ts$': '@vanilla-extract/jest-transform',
-	}
+	},
+	setupFilesAfterEnv: ['./jest.setup.ts'],
 };
