@@ -1,9 +1,9 @@
-import { useCallback, useState } from "react";
-import { Choice } from "../../types";
+import { useCallback, useState } from 'react';
+import { Choice } from '../../types';
 
 export interface Player {
-    choice: Choice;
-    choose: (choice: Choice) => void;
+	choice: Choice;
+	choose: (choice: Choice) => void;
 }
 
 export function usePlayer() {
