@@ -9,10 +9,13 @@ on:
       - reopened
       - synchronize
 jobs:
-  test:
+  pr_agent_job:
     runs-on: ubuntu-latest
+    name: Run pr agent on every pull request, respond to user comments
     steps:
-      - uses: anc95/ChatGPT-CodeReview@main
+      - name: PR Agent action step
+        id: pragent
+        uses: Codium-ai/pr-agent@main
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+          OPENAI_KEY: ${{ secrets.OPENAI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
