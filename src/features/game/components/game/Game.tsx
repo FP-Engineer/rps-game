@@ -31,6 +31,8 @@ export const Game: React.FC<Props> = ({ rules }) => {
 					choose(choice);
 				});
 			});
+		} else {
+			choose(choice);
 		}
 	}, [choose]);
 
