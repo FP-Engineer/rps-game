@@ -5,13 +5,14 @@ import { ReactComponent as RockIcon } from '../../../../assets/icon-rock.svg';
 
 export interface Props {
 	handleClick: (choice: Choice) => void;
+	glow?: boolean;
 }
 
-export const Rock: React.FC<Props> = ({ handleClick }) => {
+export const Rock: React.FC<Props> = ({ handleClick, glow }) => {
 
 	return (
 		<div className={ container }>
-			<Option label='choose rock' handleClick={ () => handleClick(Choice.rock) }>
+			<Option label='choose rock' handleClick={ () => handleClick(Choice.rock) } glow={ glow }>
 				<RockIcon />
 			</Option>
 		</div>

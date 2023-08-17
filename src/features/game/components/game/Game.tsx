@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
+import { flushSync } from 'react-dom';
 
 import { Rule } from '../../types/Rule';
 import { Choice } from '../../types/Choice';
@@ -19,11 +20,24 @@ export const Game: React.FC<Props> = ({ rules }) => {
 	const { choice: playerChoice, choose } = usePlayer();
 	const computerChoice = options[Math.floor(Math.random() * options.length)];
 	const result = evaluate(playerChoice, computerChoice);
+	const handleChoice = useCallback((choice: Choice) => {
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		// @ts-ignore
+		if (document.startViewTransition) {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-ignore
+			document.startViewTransition(() => {
+				flushSync(() => {
+					choose(choice);
+				});
+			});
+		}
+	}, [choose]);
 
 	return(
 		<div className={ container }>
 			{playerChoice === Choice.initial
-				? <PlayerTurn options={options} choose={choose} />
+				? <PlayerTurn options={options} choose={handleChoice} />
 				: <Announcement playerOneChoice={playerChoice} playerTwoChoice={computerChoice} result={result} />
 			}
 		</div>
