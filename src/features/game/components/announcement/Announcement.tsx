@@ -34,9 +34,9 @@ export const Announcement: React.FC<Props> = ({ playerOneChoice, playerTwoChoice
 	return (
 		<div className={ container }>
 			<Label className={ p1Label }>YOU PICKED</Label>
-			<span className={ p1Choice } ><P1Choice label={ playerOneChoice } handleClick={ () => undefined } /></span>
+			<span className={ p1Choice } ><P1Choice label={ playerOneChoice } handleClick={ () => undefined } glow={ Result.win === result } /></span>
 			<Label className={ p2Label }>THE HOUSE PICKED</Label>
-			<span className={ p2Choice }><P2Choice label={ playerTwoChoice } handleClick={ () => undefined } /></span>
+			<span className={ p2Choice }><P2Choice label={ playerTwoChoice } handleClick={ () => undefined } glow={ Result.pwnd === result } /></span>
 			<Label className={ resultLabel }>{ resultMessage }</Label>
 		</div>
 	);
