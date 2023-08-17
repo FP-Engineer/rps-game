@@ -1,5 +1,17 @@
 # Changelog
 
+# [1.1.0](https://github.com/FP-Engineer/rps-game/compare/v1.0.0...v1.1.0) (2023-08-17)
+
+
+### Bug Fixes
+
+* applied progressive enhancement to view transition api usage ([680008f](https://github.com/FP-Engineer/rps-game/commit/680008f07f685ce5d07b69b789e352580c5dd678))
+
+
+### Features
+
+* animated announcement ([2add962](https://github.com/FP-Engineer/rps-game/commit/2add96296348e1515aa52eb8b98c6da3d4d21d6d))
+
 # 1.0.0 (2023-08-04)
 
 
