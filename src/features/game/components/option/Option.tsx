@@ -3,10 +3,10 @@ import { container, glow as glowStyle, cycle, button as buttonStyle } from './Op
 import cn from 'classnames';
  
 export interface Props {
-	label: string;
-	handleClick: () => void;
-	glow?: boolean,
+	label?: string;
+	handleClick?: () => void;
 	children?: ReactNode;
+	glow?: boolean;
 }
 
 export const Option: React.FC<Props> = ({ handleClick, label, children, glow = false }) => {
@@ -18,7 +18,7 @@ export const Option: React.FC<Props> = ({ handleClick, label, children, glow = f
 			})}></span>
 			<button
 				className={ cn(cycle, buttonStyle) }
-				onClick={ () => handleClick() }
+				onClick={ () => handleClick && handleClick() }
 				aria-label={ label }
 			>
 				{ children }
