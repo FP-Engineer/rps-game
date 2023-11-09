@@ -13,25 +13,25 @@ describe('Announcement Test Suite', () => {
 	it('renders YOU WIN if player 1 wins.', () => {
 
 		const { getByText } = render(<Announcement playerOneChoice={Choice.initial} playerTwoChoice={Choice.initial} result={Result.win} />);
-		expect(getByText('YOU WIN')).toBeInTheDocument;
+		expect(getByText('YOU WIN')).to;
 	});
 
 	it('renders YOU LOSE if player 1 loses.', () => {
 
 		const { getByText } = render(<Announcement playerOneChoice={Choice.initial} playerTwoChoice={Choice.initial} result={Result.pwnd} />);
-		expect(getByText('YOU LOSE')).toBeInTheDocument;
+		expect(getByText('YOU LOSE')).toBeTruthy();
 	});
 
 	it('renders DRAW if nobody wins', () => {
 
 		const { getByText } = render(<Announcement playerOneChoice={Choice.initial} playerTwoChoice={Choice.initial} result={Result.draw} />);
-		expect(getByText('DRAW')).toBeInTheDocument;
+		expect(getByText('DRAW')).toBeTruthy()
 	});
 
 	it('renders UNDETERMINED if the result is not expected.', () => {
 
 		const { getByText } = render(<Announcement playerOneChoice={Choice.initial} playerTwoChoice={Choice.initial} result={Result.inapplicable} />);
-		expect(getByText('UNDETERMINED')).toBeInTheDocument;
+		expect(getByText('UNDETERMINED')).toBeTruthy()
 	});
 
 	it('should not reevaluate on click', async () => {
@@ -41,6 +41,6 @@ describe('Announcement Test Suite', () => {
 
 		await userEvent.click(buttons[0]);
 
-		expect(getByText('UNDETERMINED')).toBeInTheDocument;
+		expect(getByText('UNDETERMINED')).toBeTruthy()
 	});
 });

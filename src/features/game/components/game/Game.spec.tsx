@@ -30,6 +30,6 @@ describe('Game Test Suite', () => {
 
 		const label = await findByText('YOU PICKED');
 
-		expect(label).toBeInTheDocument;
+		expect(label).toBeTruthy()
 	});
 });
