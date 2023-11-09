@@ -12,7 +12,7 @@ describe('PlayerTurn Test Suite', () => {
 	});
 
 	it('Should delegate the user input to the provided callback', async () => {
-		const callback = jest.fn();
+		const callback = vi.fn();
 		const { getByRole } = render(<PlayerTurn options={[Choice.paper]} choose={callback} />);
 		const option = getByRole('button');
 
@@ -23,7 +23,7 @@ describe('PlayerTurn Test Suite', () => {
 
 	it('should call choose function with Choice.rock when rock option is clicked', async () => {
 		const options = Object.values(Choice);
-		const callback = jest.fn();
+		const callback = vi.fn();
 		const { getByLabelText } = render(<PlayerTurn options={options} choose={callback} />);
 		const option = getByLabelText('choose rock');
 
@@ -34,7 +34,7 @@ describe('PlayerTurn Test Suite', () => {
 
 	it('should call choose function with Choice.paper when paper option is clicked', async () => {
 		const options = Object.values(Choice);
-		const callback = jest.fn();
+		const callback = vi.fn();
 		const { getByLabelText } = render(<PlayerTurn options={options} choose={callback} />);
 		const option = getByLabelText('choose paper');
 
@@ -45,7 +45,7 @@ describe('PlayerTurn Test Suite', () => {
 
 	it('should call choose function with Choice.scissors when scissors option is clicked', async () => {
 		const options = Object.values(Choice);
-		const callback = jest.fn();
+		const callback = vi.fn();
 		const { getByLabelText } = render(<PlayerTurn options={options} choose={callback} />);
 		const option = getByLabelText('choose scissors');
 
@@ -55,7 +55,7 @@ describe('PlayerTurn Test Suite', () => {
 	});
 
 	it('should provide a fallback option', async () => {
-		const callback = jest.fn();
+		const callback = vi.fn();
 		const { getByRole } = render(<PlayerTurn options={[Choice.initial]} choose={callback} />);
 		const option = getByRole('button');
 
