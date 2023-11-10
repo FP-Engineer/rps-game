@@ -20,10 +20,11 @@ describe('Game Test Suite', () => {
 
 	it('should present a result screen.', async () => {
 		
-		const { findByRole, findByText } = render(<Game />);
-		const option = await findByRole('button');
+		const { getAllByRole, findByText } = render(<Game />);
+		const options = getAllByRole('button');
 
-		await userEvent.click(option);
+		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+		await userEvent.click(options.at(0)!);
 
 		const label = await findByText('YOU PICKED');
 

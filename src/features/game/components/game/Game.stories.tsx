@@ -13,5 +13,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const GameStory: Story = {
-	args: { rules: [] },
+	args: {},
 };
