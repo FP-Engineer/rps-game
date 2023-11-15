@@ -1,8 +1,14 @@
 import { Label } from '../../../../components/label';
-import { useComputerChoice, useResult, useUserChoice } from '../../repos';
-import { Result } from '../../types';
+import { Choice, Result } from '../../types';
 import { optionsMap } from '../constants';
 import { Option } from '../option';
+
+import {
+	useComputerChoice as defaultComputerChoice,
+	useResult as defaultResult,
+	useUserChoice as defaultUserChoice,
+} from '../../repos';
+
 import {
 	container,
 	p1Choice,
@@ -12,10 +18,17 @@ import {
 	resultLabel,
 } from './Announcement.css';
 
-export const Announcement: React.FC = () => {
-	const playerOneChoice = useUserChoice();
-	const playerTwoChoice = useComputerChoice();
-	const result = useResult();
+export interface Props {
+	playerOneChoice?: Choice;
+	playerTwoChoice?: Choice;
+	result?: Result;
+}
+
+export const Announcement: React.FC<Props> = ({
+	playerOneChoice = defaultUserChoice(),
+	playerTwoChoice = defaultComputerChoice(),
+	result = defaultResult()
+}) => {
 	const P1Choice = optionsMap.get(playerOneChoice) ?? Option;
 	const P2Choice = optionsMap.get(playerTwoChoice) ?? Option;
 	const getResultMessage = (result: Result) => {
