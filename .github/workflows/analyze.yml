@@ -6,12 +6,12 @@ jobs:
   test-lint-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
         with:
           node-version: 19
       - name: Restore node modules cache
-        uses: actions/cache@v2
+        uses: actions/cache@main
         env:
           cache-name: cache-node-modules
         with:
