@@ -30,9 +30,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@main
         with:
           node-version: 18
           cache: 'npm'
@@ -46,12 +46,12 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: yarn release
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@main
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@main
         with:
           # Upload dist repository
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@main
