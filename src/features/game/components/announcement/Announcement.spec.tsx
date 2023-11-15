@@ -4,7 +4,7 @@ import { Choice, Result } from '../../types';
 import userEvent from '@testing-library/user-event';
 
 // TODO: make this testable
-describe.skip('Announcement Test Suite', () => {
+describe('Announcement Test Suite', () => {
 
 	it('renders without crashing.', () => {
 
@@ -13,7 +13,7 @@ describe.skip('Announcement Test Suite', () => {
 
 	it('renders YOU WIN if player 1 wins.', () => {
 
-		const { getByText } = render(<Announcement playerOneChoice={Choice.initial} playerTwoChoice={Choice.initial} result={Result.win} />);
+		const { getByText } = render(<Announcement result={Result.win} />);
 		expect(getByText('YOU WIN')).to;
 	});
 
