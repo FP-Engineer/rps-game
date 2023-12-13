@@ -1,10 +1,7 @@
-import { bind } from '@react-rxjs/core';
-import { createSignal } from '@react-rxjs/utils';
+import { BehaviorSubject } from 'rxjs';
 import { Choice } from '../../types';
+import { useObservable } from '../../../../hooks/use-observable/useObservalbe';
 
-export const [userChoices, sendChoice] = createSignal<Choice>();
+export const userChoices = new BehaviorSubject(Choice.initial);
 
-export const [useUserChoice, userChoice] = bind(
-	userChoices,
-	Choice.initial,
-);
+export const useUserChoice = () => useObservable(userChoices);

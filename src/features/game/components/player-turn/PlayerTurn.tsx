@@ -3,7 +3,7 @@ import { Choice } from '../../types';
 import { container } from './PlayerTurn.css';
 import { Option } from '../option';
 import { optionsMap } from '../constants';
-import { sendChoice } from '../../repos';
+import { userChoices } from '../../repos';
 import { options as rps } from '../../constants';
 
 export interface Props {
@@ -18,8 +18,8 @@ export const PlayerTurn: React.FC<Props> = ({ options = rps }) => {
 				const Component = optionsMap.get(choice);
 
 				return Component
-					? <Component key={choice} handleClick={() => sendChoice(choice)} />
-					: <Option key={choice} label={''} handleClick={() => sendChoice(choice)}  />
+					? <Component key={choice} handleClick={() => userChoices.next(choice)} />
+					: <Option key={choice} label={''} handleClick={() => userChoices.next(choice)}  />
 			})}
 		</div>
 	);

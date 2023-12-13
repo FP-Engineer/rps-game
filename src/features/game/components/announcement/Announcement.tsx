@@ -25,9 +25,9 @@ export interface Props {
 }
 
 export const Announcement: React.FC<Props> = ({
-	playerOneChoice = defaultUserChoice(),
-	playerTwoChoice = defaultComputerChoice(),
-	result = defaultResult()
+	playerOneChoice = defaultUserChoice() ?? Choice.initial,
+	playerTwoChoice = defaultComputerChoice() ?? Choice.initial,
+	result = defaultResult() ?? Result.pending,
 }) => {
 	const P1Choice = optionsMap.get(playerOneChoice) ?? Option;
 	const P2Choice = optionsMap.get(playerTwoChoice) ?? Option;
